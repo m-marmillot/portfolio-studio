@@ -32,11 +32,11 @@ jobs:
       - name: Build static site
         run: npm run build
       - name: Keep static files untouched by Jekyll
-        run: touch out/.nojekyll
+        run: touch build/.nojekyll
       - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./build
   deploy:
     environment:
       name: github-pages
